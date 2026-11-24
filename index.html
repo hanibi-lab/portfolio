@@ -1,24 +1,207 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>마녀의 작은 연금술 공방</title><style>
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
-:root{--bg:#17172a;--panel:#2c263d;--panel2:#382e49;--gold:#f6d68b;--ink:#f9f0df;--muted:#c5b8c9;--pink:#ef9fc3;--green:#a7e6b2}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#39304d,#151423 75%);color:var(--ink);font-family:'Gowun Dodum',sans-serif;min-height:100vh}button{font:inherit;cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}.shell{max-width:1160px;margin:auto;padding:20px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-family:Jua,sans-serif;font-size:30px;color:var(--gold);text-shadow:2px 3px #513b53}.tag{color:#cab9c7;font-size:13px}.stats{display:flex;gap:10px;flex-wrap:wrap}.stat{background:#29233a;border:1px solid #5e4a67;border-radius:12px;padding:9px 13px;font-weight:bold}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}.panel{background:linear-gradient(150deg,#332b44,#252238);border:2px solid #6c5370;border-radius:18px;padding:17px;box-shadow:0 12px 30px #0c091b70}.scene{height:305px;position:relative;overflow:hidden;background:linear-gradient(#34263f 0 63%,#795342 63% 69%,#4c3440 69%);border:4px solid #a57c6e;border-radius:14px}.scene:before{content:'';position:absolute;inset:0 0 37%;background:repeating-linear-gradient(90deg,transparent 0 65px,#ffffff08 66px 68px)}.shelf{position:absolute;left:5%;top:13%;width:34%;height:20%;background:#654252;border:7px solid #a97764;border-radius:5px;display:flex;align-items:center;justify-content:space-around;font-size:27px}.window{position:absolute;right:8%;top:8%;width:25%;height:43%;border:10px solid #8e6374;border-radius:60px 60px 8px 8px;background:linear-gradient(#7b659b,#d7a2ae);text-align:center;font-size:45px;padding-top:14px}.tabletop{position:absolute;bottom:9%;left:12%;right:12%;height:28%;background:#986b5a;border:7px solid #4f3037;border-radius:18px 18px 9px 9px;box-shadow:0 16px #50353b}.cauldron{position:absolute;bottom:18%;left:37%;width:27%;height:35%;font-size:84px;text-align:center;filter:drop-shadow(0 8px 2px #17121a)}.bubble{position:absolute;left:50%;bottom:48%;font-size:24px;animation:float 2.2s infinite alternate}@keyframes float{to{transform:translateY(-16px);opacity:.35}}.visitor{position:absolute;bottom:14%;left:6%;font-size:67px;filter:drop-shadow(2px 6px 1px #241a2b)}.sign{position:absolute;right:5%;bottom:8%;background:#48344b;border:2px solid #a78168;padding:7px 12px;border-radius:7px;font-family:Jua}.speech{background:#f8ebd6;color:#493847;border-radius:14px;padding:17px;min-height:110px;line-height:1.65;position:relative;margin-top:14px}.speech b{color:#77415f}.sectionTitle{font-family:Jua;font-size:23px;color:var(--gold);margin:0 0 12px}.sub{font-size:13px;color:var(--muted);margin:0 0 14px}.ingredients{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ingredient{border:1px solid #756078;border-radius:12px;padding:10px;background:#42354d;color:var(--ink);text-align:left;min-height:90px;transition:.15s}.ingredient:hover:not(:disabled){border-color:var(--gold);transform:translateY(-2px)}.ingredient.selected{background:#66506a;border:2px solid var(--gold)}.ingredient .emoji{font-size:25px;float:left;margin-right:9px}.ingredient strong{display:block;font-size:14px}.ingredient small{display:block;color:#d8cad4;font-size:11px;line-height:1.5}.ingredient .count{color:var(--gold);font-size:12px;margin-top:5px}.tray{border:1px dashed #aa8c9f;border-radius:12px;padding:12px;margin-top:14px;min-height:61px}.trayline{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}.chip{background:#614d69;padding:4px 8px;border-radius:20px;font-size:12px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.primary,.secondary,.danger{border:0;border-radius:11px;padding:11px 16px;font-weight:bold}.primary{background:linear-gradient(#f7dc9d,#e5b978);color:#433045}.secondary{background:#554463;color:white;border:1px solid #87708b}.danger{background:#6c4157;color:white}.log{margin-top:14px;padding:12px;border-radius:10px;background:#1e1a2d;min-height:62px;font-size:13px;line-height:1.7;color:#e6d8dc}.bottom{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.progress{height:9px;border-radius:20px;background:#171323;overflow:hidden;margin-top:8px}.progress div{height:100%;background:linear-gradient(90deg,#bf7fae,#f6d68b);transition:.3s}.help{font-size:13px;line-height:1.75;color:#d3c4d4}.overlay{position:fixed;inset:0;background:#100e1bdc;display:none;align-items:center;justify-content:center;z-index:10;padding:16px}.overlay.show{display:flex}.modal{max-width:520px;width:100%;border:3px solid #c59a8e;background:#342b42;padding:27px;border-radius:20px;text-align:center;box-shadow:0 15px 80px #0008}.modal h1{font-family:Jua;color:var(--gold);font-size:31px}.modal p{line-height:1.85}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#f9e6bf;color:#45364b;padding:12px 20px;border-radius:12px;display:none;z-index:20;box-shadow:0 5px 20px #0005}.toast.show{display:block}.hint{color:#f5d997;font-size:12px}.footer{margin-top:14px;text-align:center;font-size:12px;color:#a79bad}@media(max-width:780px){.layout,.bottom{grid-template-columns:1fr}.shell{padding:12px}.scene{height:250px}.brand{font-size:24px}.cauldron{font-size:67px}.visitor{font-size:55px}.ingredient{min-height:94px}}
-</style></head><body><main class="shell"><header class="top"><div><div class="brand">✦ 마녀의 작은 연금술 공방 ✦</div><div class="tag">THE LITTLE ALCHEMY SHOP · 플레이 가능한 프로토타입 v1.0</div></div><div class="stats"><div class="stat">📅 <span id="day">1</span>일차</div><div class="stat">🪙 <span id="gold">30</span>G</div><div class="stat">💗 평판 <span id="rep">50</span></div><div class="stat">📦 의뢰 <span id="orders">0</span>/15</div></div></header><div class="layout"><section class="panel"><div class="scene"><div class="shelf">🧪 🍾 ⚗️ 🧴</div><div class="window">🌙</div><div class="tabletop"></div><div class="cauldron">⚗️</div><div class="bubble">✨</div><div class="visitor" id="visitor">🧙‍♀️</div><div class="sign">OPEN ✦</div></div><div class="speech"><b id="customerName">어서 오세요!</b><div id="request">오늘도 공방의 문을 열었습니다. 손님을 맞이해 볼까요?</div></div><div class="actions"><button class="secondary" id="hintBtn">🔎 의뢰 분석</button><button class="secondary" id="skipBtn">손님 돌려보내기 (평판 -5)</button></div><div class="log" id="journal">📜 공방 일지: 물약을 만들려면 재료를 선택한 뒤 '제조하기'를 누르세요.</div></section><section class="panel"><h2 class="sectionTitle">🌿 연금술 재료 선반</h2><p class="sub">재료를 최대 3개 선택하세요. 각 재료는 물약의 효과를 변화시킵니다.</p><div class="ingredients" id="ingredients"></div><div class="tray"><strong>🫧 가마솥에 넣을 재료 <span id="selectedCount">0</span>/3</strong><div class="trayline" id="tray"><span class="sub">선택한 재료가 없습니다.</span></div><div class="hint" id="preview">효과: 아직 알 수 없음</div></div><div class="actions"><button class="primary" id="brewBtn">✨ 물약 제조하기</button><button class="secondary" id="clearBtn">선택 초기화</button><button class="secondary" id="buyBtn">📦 재료 보충 (12G)</button></div><p class="help">💡 효과는 <b>회복 · 활력 · 안정 · 집중</b> 네 가지입니다. 재료 효과를 합산한 뒤 손님의 요구와 비교합니다. 보충 시 모든 재료 재고가 2개씩 증가합니다.</p></section></div><div class="bottom"><section class="panel"><h2 class="sectionTitle">📖 오늘의 공방 운영</h2><div id="statusText">오늘의 손님을 맞이하세요.</div><div class="progress"><div id="dayProgress" style="width:0%"></div></div><p class="help">하루에 손님 3명, 총 5일을 운영합니다. 각 손님에게 한 번의 물약을 제공할 수 있습니다. 마지막 날까지 평판과 골드를 관리하세요.</p></section><section class="panel"><h2 class="sectionTitle">📋 연금술사 수첩</h2><div class="help">🌺 붉은 꽃: 회복 +3 · 활력 +1<br>🍄 달빛 버섯: 안정 +3 · 집중 +1<br>🌿 은빛 허브: 회복 +1 · 안정 +2<br>⚡ 번개 가루: 활력 +3 · 집중 +1<br>💎 수정 조각: 집중 +3 · 안정 +1<br>🍯 황금 꿀: 회복 +2 · 활력 +2</div></section></div><div class="footer">이 게임의 의뢰 해석과 물약 판정은 규칙 기반입니다. 생성형 AI API는 아직 연결되지 않았습니다.</div></main><div class="overlay" id="overlay"><div class="modal"><h1 id="modalTitle"></h1><p id="modalBody"></p><button class="primary" id="modalBtn">시작하기</button></div></div><div class="toast" id="toast"></div><script>
-'use strict';
-const ING=[{id:'flower',name:'붉은 꽃',icon:'🌺',desc:'회복 +3 · 활력 +1',v:[3,1,0,0]},{id:'mushroom',name:'달빛 버섯',icon:'🍄',desc:'안정 +3 · 집중 +1',v:[0,0,3,1]},{id:'herb',name:'은빛 허브',icon:'🌿',desc:'회복 +1 · 안정 +2',v:[1,0,2,0]},{id:'spark',name:'번개 가루',icon:'⚡',desc:'활력 +3 · 집중 +1',v:[0,3,0,1]},{id:'crystal',name:'수정 조각',icon:'💎',desc:'집중 +3 · 안정 +1',v:[0,0,1,3]},{id:'honey',name:'황금 꿀',icon:'🍯',desc:'회복 +2 · 활력 +2',v:[2,2,0,0]}];
-const EFFECT=['회복','활력','안정','집중'];
-const CUSTOMERS=[{name:'잠 못 드는 기사',icon:'🛡️',text:'밤마다 악몽에 시달립니다. 마음을 진정시킬 물약이 필요해요.',target:2,need:4},{name:'지친 배달부',icon:'🏃',text:'오늘도 왕국 끝까지 달려야 해요! 힘이 솟는 약이 있을까요?',target:1,need:4},{name:'견습 마법사',icon:'🧙',text:'주문을 자꾸 잊어버려요. 정신이 맑아지는 물약을 부탁해요.',target:3,need:4},{name:'상처 입은 사냥꾼',icon:'🏹',text:'숲에서 다쳤어요. 상처를 낫게 해줄 물약이 필요해요.',target:0,need:4},{name:'불안한 귀족',icon:'👑',text:'중요한 연설이 있는데 너무 떨려요. 차분해지고 싶어요.',target:2,need:5},{name:'밤샘 연구자',icon:'📚',text:'고대 문헌을 밤새 해독해야 합니다. 집중력을 높여주세요.',target:3,need:5},{name:'피곤한 광부',icon:'⛏️',text:'광산에서 하루 종일 일했더니 기운이 없네요.',target:1,need:5},{name:'다친 여행자',icon:'🧳',text:'먼 길을 걷다가 발목을 삐었어요. 빨리 회복하고 싶어요.',target:0,need:5},{name:'긴장한 음유시인',icon:'🎻',text:'내일 첫 공연이라 손이 떨립니다. 마음을 가라앉혀주세요.',target:2,need:5},{name:'시험 앞둔 학생',icon:'✒️',text:'왕립 학교 시험이 코앞이에요. 집중할 수 있게 해주세요.',target:3,need:6},{name:'원정대 전사',icon:'⚔️',text:'긴 원정을 떠납니다. 지치지 않도록 활력을 주세요.',target:1,need:6},{name:'부상당한 경비병',icon:'🪖',text:'마을을 지키다가 다쳤어요. 강력한 회복약이 필요합니다.',target:0,need:6},{name:'잠 못 드는 왕자',icon:'🤴',text:'왕국의 걱정 때문에 잠을 못 이룹니다. 마음을 편히 해주세요.',target:2,need:6},{name:'왕립 천문학자',icon:'🔭',text:'오늘 밤 별의 궤도를 계산해야 해요. 집중력이 절실합니다.',target:3,need:6},{name:'왕국의 전령',icon:'📯',text:'새벽까지 말을 달려야 합니다. 강한 활력의 물약을 부탁합니다.',target:1,need:6}];
-let state;const $=id=>document.getElementById(id);let toastTimer;
-function newGame(){state={index:0,gold:30,rep:50,stock:Object.fromEntries(ING.map(i=>[i.id,5])),selected:[],results:[],finished:false};$('overlay').classList.remove('show');render();}
-function current(){return CUSTOMERS[state.index]}
-function scorePotion(){let values=[0,0,0,0];state.selected.forEach(id=>{const v=ING.find(i=>i.id===id).v;v.forEach((n,j)=>values[j]+=n)});return values}
-function render(){const c=current();$('day').textContent=Math.min(5,Math.floor(state.index/3)+1);$('gold').textContent=state.gold;$('rep').textContent=state.rep;$('orders').textContent=state.index;$('customerName').textContent=c?c.name:'영업 종료';$('request').textContent=c?`“${c.text}”`:'5일간의 영업을 마쳤습니다.';$('visitor').textContent=c?c.icon:'🧙‍♀️';$('ingredients').innerHTML=ING.map(i=>`<button class="ingredient ${state.selected.includes(i.id)?'selected':''}" data-id="${i.id}" ${state.finished||state.stock[i.id]<=state.selected.filter(x=>x===i.id).length||state.selected.length>=3?'disabled':''}><span class="emoji">${i.icon}</span><strong>${i.name}</strong><small>${i.desc}</small><div class="count">재고 ${state.stock[i.id]}개</div></button>`).join('');document.querySelectorAll('.ingredient').forEach(b=>b.onclick=()=>choose(b.dataset.id));$('selectedCount').textContent=state.selected.length;$('tray').innerHTML=state.selected.length?state.selected.map((id,j)=>`<button class="chip" data-pos="${j}" title="클릭하면 제거">${ING.find(i=>i.id===id).icon} ${ING.find(i=>i.id===id).name} ×</button>`).join(''):'<span class="sub">선택한 재료가 없습니다.</span>';document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{state.selected.splice(Number(b.dataset.pos),1);render()});const v=scorePotion();$('preview').textContent=state.selected.length?'예상 효과: '+EFFECT.map((e,j)=>`${e} ${v[j]}`).join(' · '):'효과: 아직 알 수 없음';$('brewBtn').disabled=state.finished||!state.selected.length;$('skipBtn').disabled=state.finished;$('hintBtn').disabled=state.finished;$('clearBtn').disabled=state.finished||!state.selected.length;$('buyBtn').disabled=state.finished||state.gold<12;$('dayProgress').style.width=((state.index%3)/3*100)+'%';$('statusText').textContent=state.finished?'최종 평가 완료':`${Math.floor(state.index/3)+1}일차 · ${state.index%3+1}번째 손님 / 3명`;}
-function choose(id){if(state.finished||state.selected.length>=3||state.stock[id]<=state.selected.filter(x=>x===id).length)return;state.selected.push(id);render()}
-function journal(msg){$('journal').textContent='📜 '+msg}
-function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2400)}
-function brew(){if(state.finished||!state.selected.length)return;const c=current(),v=scorePotion(),value=v[c.target],other=Math.max(...v.filter((_,j)=>j!==c.target));let grade,pay,repDelta;if(value>=c.need&&value>=other){grade='대성공 ✨';pay=18;repDelta=8}else if(value>=Math.ceil(c.need*.6)&&value>=other-1){grade='성공 🌟';pay=11;repDelta=4}else{grade='실패 💧';pay=2;repDelta=-8}state.selected.forEach(id=>state.stock[id]--);state.gold+=pay;state.rep=Math.max(0,Math.min(100,state.rep+repDelta));state.results.push({name:c.name,grade,pay});journal(`${c.name}: ${grade}! ${EFFECT[c.target]} ${value}/${c.need}, 보상 ${pay}G, 평판 ${repDelta>=0?'+':''}${repDelta}.`);state.selected=[];advance();}
-function skip(){if(state.finished)return;const c=current();state.rep=Math.max(0,state.rep-5);state.results.push({name:c.name,grade:'거절',pay:0});journal(`${c.name}의 의뢰를 거절했습니다. 평판 -5.`);advance()}
-function advance(){state.index++;if(state.index>=CUSTOMERS.length){finish();return}render();if(state.index%3===0){showModal('🌙 하루가 저물었습니다',`${state.index/3}일차 영업 종료!<br>내일은 새로운 손님들이 찾아옵니다.<br>현재 골드 <b>${state.gold}G</b> · 평판 <b>${state.rep}</b>`, '다음 날 시작',()=>{$('overlay').classList.remove('show');render()})}else toast('새로운 손님이 찾아왔습니다!')}
-function finish(){state.finished=true;render();const wins=state.results.filter(r=>r.grade.includes('성공')).length;const rank=state.rep>=85&&state.gold>=100?'왕국 최고의 연금술사 🏆':state.rep>=60?'믿음직한 마을 연금술사 🌟':'수습 연금술사 🌱';showModal('🎉 5일간의 영업 종료',`<b>${rank}</b><br>성공 의뢰 ${wins}/15 · 최종 평판 ${state.rep} · 골드 ${state.gold}G<br><br>손님에게 필요한 효과를 읽고 재료를 조합하는 것이 핵심입니다.`, '다시 플레이',newGame)}
-function showModal(title,body,button,fn){$('modalTitle').textContent=title;$('modalBody').innerHTML=body;$('modalBtn').textContent=button;$('modalBtn').onclick=fn;$('overlay').classList.add('show')}
-$('brewBtn').onclick=brew;$('skipBtn').onclick=skip;$('clearBtn').onclick=()=>{state.selected=[];render()};$('hintBtn').onclick=()=>{const c=current();toast(`의뢰 분석: 필요한 효과는 '${EFFECT[c.target]}', 목표 수치 ${c.need} 이상입니다.`);journal(`🔎 의뢰 분석 결과: ${c.name}에게는 '${EFFECT[c.target]}' 효과 ${c.need} 이상이 필요합니다. 다른 효과보다 주요 효과가 높으면 유리합니다.`)};$('buyBtn').onclick=()=>{if(state.gold<12)return;state.gold-=12;ING.forEach(i=>state.stock[i.id]+=2);journal('재료 보충 완료! 12G를 지불하고 모든 재료를 2개씩 받았습니다.');render()};
-newGame();showModal('🌙 마녀의 작은 연금술 공방','작은 공방을 운영하며 <b>5일 동안 15명의 손님</b>에게 물약을 만들어 주세요.<br><br>손님의 고민을 읽고 재료를 <b>최대 3개</b> 조합합니다. 재료를 클릭해 가마솥에 넣고 <b>물약 제조하기</b>를 누르세요.<br><br>골드와 평판을 높여 왕국 최고의 연금술사가 되어 보세요!','공방 문 열기',()=>$('overlay').classList.remove('show'));
-</script></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   마녀의 작은 연금술 공방
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="shell">
+   <header class="top">
+    <div>
+     <div class="brand">
+      ✦ 마녀의 작은 연금술 공방 ✦
+     </div>
+     <div class="tag">
+      THE LITTLE ALCHEMY SHOP · 플레이 가능한 프로토타입 v1.0
+     </div>
+    </div>
+    <div class="stats">
+     <div class="stat">
+      📅
+      <span id="day">
+       1
+      </span>
+      일차
+     </div>
+     <div class="stat">
+      🪙
+      <span id="gold">
+       30
+      </span>
+      G
+     </div>
+     <div class="stat">
+      💗 평판
+      <span id="rep">
+       50
+      </span>
+     </div>
+     <div class="stat">
+      📦 의뢰
+      <span id="orders">
+       0
+      </span>
+      /15
+     </div>
+    </div>
+   </header>
+   <div class="layout">
+    <section class="panel">
+     <div class="scene">
+      <div class="shelf">
+       🧪 🍾 ⚗️ 🧴
+      </div>
+      <div class="window">
+       🌙
+      </div>
+      <div class="tabletop">
+      </div>
+      <div class="cauldron">
+       ⚗️
+      </div>
+      <div class="bubble">
+       ✨
+      </div>
+      <div class="visitor" id="visitor">
+       🧙‍♀️
+      </div>
+      <div class="sign">
+       OPEN ✦
+      </div>
+     </div>
+     <div class="speech">
+      <b id="customerName">
+       어서 오세요!
+      </b>
+      <div id="request">
+       오늘도 공방의 문을 열었습니다. 손님을 맞이해 볼까요?
+      </div>
+     </div>
+     <div class="actions">
+      <button class="secondary" id="hintBtn">
+       🔎 의뢰 분석
+      </button>
+      <button class="secondary" id="skipBtn">
+       손님 돌려보내기 (평판 -5)
+      </button>
+     </div>
+     <div class="log" id="journal">
+      📜 공방 일지: 물약을 만들려면 재료를 선택한 뒤 '제조하기'를 누르세요.
+     </div>
+    </section>
+    <section class="panel">
+     <h2 class="sectionTitle">
+      🌿 연금술 재료 선반
+     </h2>
+     <p class="sub">
+      재료를 최대 3개 선택하세요. 각 재료는 물약의 효과를 변화시킵니다.
+     </p>
+     <div class="ingredients" id="ingredients">
+     </div>
+     <div class="tray">
+      <strong>
+       🫧 가마솥에 넣을 재료
+       <span id="selectedCount">
+        0
+       </span>
+       /3
+      </strong>
+      <div class="trayline" id="tray">
+       <span class="sub">
+        선택한 재료가 없습니다.
+       </span>
+      </div>
+      <div class="hint" id="preview">
+       효과: 아직 알 수 없음
+      </div>
+     </div>
+     <div class="actions">
+      <button class="primary" id="brewBtn">
+       ✨ 물약 제조하기
+      </button>
+      <button class="secondary" id="clearBtn">
+       선택 초기화
+      </button>
+      <button class="secondary" id="buyBtn">
+       📦 재료 보충 (12G)
+      </button>
+     </div>
+     <p class="help">
+      💡 효과는
+      <b>
+       회복 · 활력 · 안정 · 집중
+      </b>
+      네 가지입니다. 재료 효과를 합산한 뒤 손님의 요구와 비교합니다. 보충 시 모든 재료 재고가 2개씩 증가합니다.
+     </p>
+    </section>
+   </div>
+   <div class="bottom">
+    <section class="panel">
+     <h2 class="sectionTitle">
+      📖 오늘의 공방 운영
+     </h2>
+     <div id="statusText">
+      오늘의 손님을 맞이하세요.
+     </div>
+     <div class="progress">
+      <div id="dayProgress" style="width:0%">
+      </div>
+     </div>
+     <p class="help">
+      하루에 손님 3명, 총 5일을 운영합니다. 각 손님에게 한 번의 물약을 제공할 수 있습니다. 마지막 날까지 평판과 골드를 관리하세요.
+     </p>
+    </section>
+    <section class="panel">
+     <h2 class="sectionTitle">
+      📋 연금술사 수첩
+     </h2>
+     <div class="help">
+      🌺 붉은 꽃: 회복 +3 · 활력 +1
+      <br/>
+      🍄 달빛 버섯: 안정 +3 · 집중 +1
+      <br/>
+      🌿 은빛 허브: 회복 +1 · 안정 +2
+      <br/>
+      ⚡ 번개 가루: 활력 +3 · 집중 +1
+      <br/>
+      💎 수정 조각: 집중 +3 · 안정 +1
+      <br/>
+      🍯 황금 꿀: 회복 +2 · 활력 +2
+     </div>
+    </section>
+   </div>
+   <div class="footer">
+    이 게임의 의뢰 해석과 물약 판정은 규칙 기반입니다. 생성형 AI API는 아직 연결되지 않았습니다.
+   </div>
+  </main>
+  <div class="overlay" id="overlay">
+   <div class="modal">
+    <h1 id="modalTitle">
+    </h1>
+    <p id="modalBody">
+    </p>
+    <button class="primary" id="modalBtn">
+     시작하기
+    </button>
+   </div>
+  </div>
+  <div class="toast" id="toast">
+  </div>
+  <script src="js/ingredients.js">
+  </script>
+  <script src="js/customers.js">
+  </script>
+  <script src="js/alchemy.js">
+  </script>
+  <script src="js/ui.js">
+  </script>
+  <script src="js/game.js">
+  </script>
+  <script src="js/main.js">
+  </script>
+ </body>
+</html>
